@@ -91,10 +91,15 @@ export default function Footer() {
             </div>
 
             <div className="space-y-4">
-              <div className="flex items-center gap-3 text-sm text-slate-300">
-                <MapPin className="h-5 w-5 text-accent shrink-0" />
-                <span>Sector 15, Global Education Hub, IND</span>
-              </div>
+              <a
+                href="https://maps.app.goo.gl/riKX7bWLQNZ6zyDKA?g_st=aw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-sm text-slate-300 hover:text-accent transition-colors group"
+              >
+                <MapPin className="h-5 w-5 text-accent shrink-0 group-hover:scale-110 transition-transform" />
+                <span>Modern Education Group Campus ↗</span>
+              </a>
               <div className="flex items-center gap-3 text-sm text-slate-300">
                 <Phone className="h-5 w-5 text-accent shrink-0" />
                 <span>+91 1800 234 5678 (Toll Free)</span>

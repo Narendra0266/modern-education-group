@@ -5,29 +5,34 @@ import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
 
 
+const OFFICIAL_MAPS_LINK = 'https://maps.app.goo.gl/riKX7bWLQNZ6zyDKA?g_st=aw';
+
 const LOCATIONS = [
   {
     name: 'Modern English School',
     shortName: 'MES Primary',
-    address: 'Sector 4, Main Institutional Area, Gurugram, Haryana, IND',
-    phone: '+91 124 456 7890',
+    address: 'Modern Education Group Campus, Main Road',
+    phone: '+91 1800 234 5678',
     email: 'mes.primary@moderneducation.group',
-    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.9715105272635!2d77.01802377549448!3d28.450257375765796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19d678e7275f%3A0xe54e60ea9b43e8d!2sSector%204%2C%20Gurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1700000000001!5m2!1sen!2sin',
+    directMapUrl: OFFICIAL_MAPS_LINK,
+    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.9715105272635!2d77.01802377549448!3d28.450257375765796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19d678e7275f%3A0xe54e60ea9b43e8d!2sModern%20Group%20of%20Education!5e0!3m2!1sen!2sin!4v1700000000001!5m2!1sen!2sin',
   },
   {
     name: 'Modern Girls College',
     shortName: 'MGC College',
-    address: 'Plot No. 12, Knowledge Park III, Greater Noida, Uttar Pradesh, IND',
-    phone: '+91 120 789 0123',
+    address: 'Modern Education Group Campus Block B',
+    phone: '+91 1800 234 5678',
     email: 'mgc.college@moderneducation.group',
+    directMapUrl: OFFICIAL_MAPS_LINK,
     mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.251458999818!2d77.48512137549524!3d28.471962375754972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc1daf60e8163%3A0x6d97c5553e20ec42!2sKnowledge%20Park%20III%2C%20Greater%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000002!5m2!1sen!2sin',
   },
   {
     name: 'New Modern Senior Secondary School',
     shortName: 'NMSS Senior',
-    address: 'Pocket A-1, Sector 8, Dwarka, New Delhi, IND',
-    phone: '+91 11 2345 6789',
+    address: 'Modern Education Group Senior Campus Block C',
+    phone: '+91 1800 234 5678',
     email: 'nmss.senior@moderneducation.group',
+    directMapUrl: OFFICIAL_MAPS_LINK,
     mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.943187889818!2d77.06212137550005!3d28.583462375691072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b1daf60e163%3A0x6d97c5553e20ec42!2sSector%208%2C%20Dwarka%2C%20New%20Delhi!5e0!3m2!1sen!2sin!4v1700000000003!5m2!1sen!2sin',
   },
 ];
@@ -332,6 +337,17 @@ export default function Contact() {
                 title="Google Map Frame"
               ></iframe>
               <div className="absolute inset-0 bg-primary/5 pointer-events-none group-hover:bg-transparent transition-colors duration-500" />
+              
+              {/* Direct Maps Action Pill */}
+              <a
+                href={OFFICIAL_MAPS_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-4 right-4 z-20 px-4 py-2 rounded-full bg-primary text-white font-bold text-xs shadow-xl border border-white/20 hover:bg-accent hover:text-primary transition-all flex items-center gap-1.5"
+              >
+                <span>Get Directions on Google Maps</span>
+                <span>↗</span>
+              </a>
             </div>
           </div>
         </div>
