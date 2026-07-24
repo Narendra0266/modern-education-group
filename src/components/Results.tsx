@@ -299,17 +299,18 @@ export default function Results() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Future Upload CTA */}
+        {/* Official Board Verification Note */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-16 text-center"
+          className="mt-12 text-center"
         >
-          <p className="text-xs text-slate-400 font-mono uppercase tracking-widest">
-            * Board results are verified with institutional records and CBSE/State board metrics.
-          </p>
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs text-slate-500 font-mono tracking-wide">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span>* Board results are verified with institutional records and RBSE/State board metrics.</span>
+          </div>
         </motion.div>
       </div>
     </section>
