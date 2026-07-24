@@ -259,7 +259,7 @@ export default function Hero({
   }
 
   return (
-    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-[#071a35]">
+    <section className="relative min-h-screen w-full overflow-hidden flex items-center justify-center bg-[#071a35] py-12 md:py-0">
       {/* Cinematic school photo background with Ken Burns zoom effect */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -276,7 +276,7 @@ export default function Hero({
       <div className="absolute inset-0 bg-gradient-to-b from-[#071A35]/65 via-transparent to-[#071A35]/95 pointer-events-none z-10" />
 
       {/* Main Container */}
-      <div className="relative z-20 w-full max-w-7xl px-6 md:px-8 h-full flex flex-col justify-between pt-[120px] pb-12">
+      <div className="relative z-20 w-full max-w-7xl px-6 md:px-8 h-full flex flex-col justify-between pt-24 sm:pt-[120px] pb-8">
         {/* Floating Left Menu Panel */}
         <motion.div
           initial={{ x: -60, opacity: 0 }}
@@ -388,9 +388,8 @@ export default function Hero({
           </div>
 
           {/* Interactive 3D Hologram Canvas */}
-          <div className="relative w-[340px] h-[340px] md:w-[420px] md:h-[420px] flex items-center justify-center z-20">
-            <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-auto" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,#071a35_90%)] pointer-events-none mix-blend-multiply" />
+          <div className="relative w-56 h-56 sm:w-80 sm:h-80 md:w-[400px] md:h-[400px] flex items-center justify-center z-20 my-2 pointer-events-none">
+            <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-auto bg-transparent" />
           </div>
 
           {/* Center Main Pill Buttons */}
