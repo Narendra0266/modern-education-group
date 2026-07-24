@@ -387,13 +387,8 @@ export default function Hero({
             </motion.p>
           </div>
 
-          {/* Interactive 3D Hologram Canvas */}
-          <div className="relative w-56 h-56 sm:w-80 sm:h-80 md:w-[400px] md:h-[400px] flex items-center justify-center z-20 my-2 pointer-events-none">
-            <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-auto bg-transparent" />
-          </div>
-
           {/* Center Main Pill Buttons */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 relative z-30 mt-4">
+          <div className="flex flex-col sm:flex-row items-center gap-4 relative z-30 mt-8">
             <Link
               href="#admissions"
               className="px-8 py-3.5 rounded-full bg-[#ff5a1f] text-white font-semibold tracking-wider text-xs uppercase hover:bg-white hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-[#ff5a1f]/20 cursor-pointer"
