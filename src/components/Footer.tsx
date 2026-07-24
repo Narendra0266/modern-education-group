@@ -100,10 +100,13 @@ export default function Footer() {
                 <MapPin className="h-5 w-5 text-accent shrink-0 group-hover:scale-110 transition-transform" />
                 <span>Modern Education Group Campus ↗</span>
               </a>
-              <div className="flex items-center gap-3 text-sm text-slate-300">
+              <a
+                href="tel:+918107212072"
+                className="flex items-center gap-3 text-sm text-slate-300 hover:text-accent transition-colors"
+              >
                 <Phone className="h-5 w-5 text-accent shrink-0" />
-                <span>+91 1800 234 5678 (Toll Free)</span>
-              </div>
+                <span>+91 8107212072</span>
+              </a>
               <div className="flex items-center gap-3 text-sm text-slate-300">
                 <Mail className="h-5 w-5 text-accent shrink-0" />
                 <span>admissions@moderneducation.group</span>

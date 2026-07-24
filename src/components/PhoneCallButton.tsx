@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Phone } from 'lucide-react';
 
 export default function PhoneCallButton() {
-  const phoneNumber = '+9118002345678'; // Central admissions toll-free helpline number
+  const phoneNumber = '+918107212072'; // Central admissions helpline number
 
   return (
     <motion.div

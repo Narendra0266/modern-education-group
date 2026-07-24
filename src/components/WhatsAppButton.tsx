@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function WhatsAppButton() {
   // Central admissions WhatsApp contact number
-  const phoneNumber = '919999999999'; 
+  const phoneNumber = '918107212072'; 
   const message = 'Hello! I am interested in admissions at Modern Education Group. Please share more details.';
   const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
