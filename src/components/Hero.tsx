@@ -192,7 +192,7 @@ export default function Hero({
   const logoSrc = getAssetPath(
     title === 'Modern Girls College' ? '/images/college_logo.png' :
     title === 'Modern English School' ? '/images/english_school_logo.png' :
-    (title.includes('New Modern') || title.includes('Senior Secondary') || title.includes('NMSS')) ? '/images/nmss_logo.jpg' :
+    (title.includes('New Modern') || title.includes('Senior Secondary') || title.includes('NMSS')) ? '/images/nmss_logo.png' :
     '/images/logo.png'
   );
 
@@ -228,12 +228,12 @@ export default function Hero({
             onMouseLeave={handleLogoMouseLeave}
             transition={{ type: 'spring', stiffness: 150, damping: 15 }}
             style={{ perspective: 1000, transformStyle: "preserve-3d" }}
-            className="mx-auto w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 mb-8 flex items-center justify-center cursor-pointer rounded-full overflow-hidden border-4 border-amber-400/80 shadow-[0_0_35px_rgba(212,175,55,0.4)] bg-white/10"
+            className="mx-auto w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 mb-8 flex items-center justify-center cursor-pointer"
           >
             <img
               src={logoSrc}
               alt="School Logo"
-              className="w-full h-full object-cover animate-float"
+              className="w-full h-full object-contain filter drop-shadow-[0_0_35px_rgba(212,175,55,0.45)] animate-float"
               style={{ transform: "translateZ(25px)" }}
             />
           </motion.div>

@@ -51,7 +51,7 @@ export default function Navbar({ schoolName = 'Modern Education Group', isSubpag
   const logoSrc = getAssetPath(
     schoolName === 'Modern Girls College' ? '/images/college_logo.png' :
     schoolName === 'Modern English School' ? '/images/english_school_logo.png' :
-    (schoolName.includes('New Modern') || schoolName.includes('Senior Secondary') || schoolName.includes('NMSS')) ? '/images/nmss_logo.jpg' :
+    (schoolName.includes('New Modern') || schoolName.includes('Senior Secondary') || schoolName.includes('NMSS')) ? '/images/nmss_logo.png' :
     '/images/logo.png'
   );
 
@@ -73,11 +73,11 @@ export default function Navbar({ schoolName = 'Modern Education Group', isSubpag
           }`}
         >
           <Link href={backLink || '/'} className="flex items-center gap-3 group">
-            <div className="relative h-12 w-12 sm:h-14 sm:w-14 rounded-full overflow-hidden flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-md border border-white/20 shrink-0 bg-white/10">
+            <div className="relative h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shrink-0">
               <img
                 src={logoSrc}
                 alt="Modern Education Group logo"
-                className="h-full w-full object-cover"
+                className="h-full w-auto object-contain filter drop-shadow-[0_0_12px_rgba(255,255,255,0.25)]"
               />
             </div>
             <div className="flex flex-col text-left">
