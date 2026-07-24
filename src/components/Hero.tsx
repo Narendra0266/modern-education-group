@@ -228,12 +228,12 @@ export default function Hero({
             onMouseLeave={handleLogoMouseLeave}
             transition={{ type: 'spring', stiffness: 150, damping: 15 }}
             style={{ perspective: 1000, transformStyle: "preserve-3d" }}
-            className="mx-auto w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44 mb-8 flex items-center justify-center cursor-pointer"
+            className="mx-auto w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 mb-8 flex items-center justify-center cursor-pointer rounded-full overflow-hidden border-4 border-amber-400/80 shadow-[0_0_35px_rgba(212,175,55,0.4)] bg-white/10"
           >
             <img
               src={logoSrc}
               alt="School Logo"
-              className="w-full h-full object-contain filter drop-shadow-[0_0_25px_rgba(255,255,255,0.25)] animate-float"
+              className="w-full h-full object-cover animate-float"
               style={{ transform: "translateZ(25px)" }}
             />
           </motion.div>

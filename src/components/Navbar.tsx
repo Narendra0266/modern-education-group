@@ -73,11 +73,11 @@ export default function Navbar({ schoolName = 'Modern Education Group', isSubpag
           }`}
         >
           <Link href={backLink || '/'} className="flex items-center gap-3 group">
-            <div className="relative h-14 sm:h-18 w-auto flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+            <div className="relative h-12 w-12 sm:h-14 sm:w-14 rounded-full overflow-hidden flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-md border border-white/20 shrink-0 bg-white/10">
               <img
                 src={logoSrc}
                 alt="Modern Education Group logo"
-                className="h-full w-auto object-contain"
+                className="h-full w-full object-cover"
               />
             </div>
             <div className="flex flex-col text-left">
