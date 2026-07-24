@@ -430,39 +430,6 @@ export default function Hero({
           ))}
         </div>
 
-        {/* Bottom Area: Capsules & Scroll Down */}
-        <div className="w-full flex flex-col md:flex-row items-center justify-between gap-6 pt-6 border-t border-white/8 z-30 mt-auto">
-          {/* Preview Capsules */}
-          <div className="flex flex-wrap items-center gap-3 justify-center md:justify-start">
-            {[
-              { label: 'MES Sandbox', route: '/modern-english-school' },
-              { label: 'MGC Residence', route: '/modern-girls-college' },
-              { label: 'NMSS AI Lab', route: '/new-modern-senior-secondary' },
-            ].map((capsule, cIdx) => (
-              <Link
-                key={cIdx}
-                href={capsule.route}
-                className="px-4 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/8 backdrop-blur-md text-[10px] font-bold text-slate-300 hover:text-white transition-all tracking-wider uppercase font-mono"
-              >
-                {capsule.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Scroll Down */}
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
-            className="flex items-center gap-2 cursor-pointer p-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/8 backdrop-blur-md text-slate-300 hover:text-white transition-all shadow-lg"
-            onClick={() => {
-              const target = document.getElementById('about');
-              target?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            <span className="text-[9px] tracking-widest uppercase font-mono font-bold pl-2">Explore Section</span>
-            <ChevronDown className="h-4 w-4 text-accent" />
-          </motion.div>
-        </div>
       </div>
     </section>
   );
