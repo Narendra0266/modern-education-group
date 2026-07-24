@@ -192,6 +192,7 @@ export default function Hero({
   const logoSrc = getAssetPath(
     title === 'Modern Girls College' ? '/images/college_logo.png' :
     title === 'Modern English School' ? '/images/english_school_logo.png' :
+    (title.includes('New Modern') || title.includes('Senior Secondary') || title.includes('NMSS')) ? '/images/nmss_logo.jpg' :
     '/images/logo.png'
   );
 

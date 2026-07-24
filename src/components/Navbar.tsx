@@ -51,6 +51,7 @@ export default function Navbar({ schoolName = 'Modern Education Group', isSubpag
   const logoSrc = getAssetPath(
     schoolName === 'Modern Girls College' ? '/images/college_logo.png' :
     schoolName === 'Modern English School' ? '/images/english_school_logo.png' :
+    (schoolName.includes('New Modern') || schoolName.includes('Senior Secondary') || schoolName.includes('NMSS')) ? '/images/nmss_logo.jpg' :
     '/images/logo.png'
   );
 
