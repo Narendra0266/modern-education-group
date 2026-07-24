@@ -14,6 +14,7 @@ import {
   Coffee,
   HeartPulse,
 } from "lucide-react";
+import { getAssetPath } from "@/lib/image";
 
 interface FacilityItem {
   title: string;
@@ -30,7 +31,7 @@ interface FacilitiesProps {
 
 const DEFAULT_FACILITIES = [
   {
-    title: "Centennial Library",
+    title: "Digital Library & Learning Commons",
     icon: BookOpen,
     description: "Over 50,000 physical volumes, digital archives, and quiet study alcoves with high-speed research terminals.",
     image: null,
@@ -40,21 +41,21 @@ const DEFAULT_FACILITIES = [
     title: "Advanced Science Labs",
     icon: FlaskConical,
     description: "University-grade chemistry, physics, and biology equipment designed for advanced research experiments.",
-    image: "/images/science_lab.png",
+    image: getAssetPath("/images/science_lab.png"),
     color: null,
   },
   {
     title: "AI & Data Science Hub",
     icon: Cpu,
     description: "Equipped with high-performance GPU workstations for learning neural networks and deep learning models.",
-    image: "/images/robotics_lab.png",
+    image: getAssetPath("/images/robotics_lab.png"),
     color: null,
   },
   {
     title: "Robotics Sandbox",
     icon: Bot,
     description: "A collaborative makerspace for designing, assembling, and programming custom competition-ready robots.",
-    image: "/images/robotics_lab.png",
+    image: getAssetPath("/images/robotics_lab.png"),
     color: null,
   },
   {

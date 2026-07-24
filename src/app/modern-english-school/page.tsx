@@ -12,6 +12,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import AIAssistant from "@/components/AIAssistant";
 import { BookOpen, FlaskConical, Bot, Trophy, Coffee, HeartPulse } from "lucide-react";
+import { getAssetPath } from "@/lib/image";
 
 const ENGLISH_SCHOOL_FACILITIES = [
   {
@@ -25,14 +26,14 @@ const ENGLISH_SCHOOL_FACILITIES = [
     title: "Kids Science Laboratory",
     icon: FlaskConical,
     description: "Equipped with simple microscopes and modular experiment packs, making biology and chemistry fun.",
-    image: "/images/science_lab.png",
+    image: getAssetPath("/images/science_lab.png"),
     color: null,
   },
   {
     title: "Robotics Explorer Sandbox",
     icon: Bot,
     description: "Modular Lego Mindstorms and electronics boards designed to teach primary logical computational thinking.",
-    image: "/images/robotics_lab.png",
+    image: getAssetPath("/images/robotics_lab.png"),
     color: null,
   },
   {
@@ -76,7 +77,7 @@ export default function ModernEnglishSchool() {
         <Hero
           title="Modern English School"
           motto="Building Strong Foundations for Creative & Inquiring Minds"
-          bgImage="/images/science_lab.png"
+          bgImage={getAssetPath("/images/science_lab.png")}
         />
 
         {/* About Section */}

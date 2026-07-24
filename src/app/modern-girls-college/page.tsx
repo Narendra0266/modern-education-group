@@ -13,6 +13,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import AIAssistant from "@/components/AIAssistant";
 import { BookOpen, FlaskConical, Home, Trophy, Tv, HeartPulse } from "lucide-react";
+import { getAssetPath } from "@/lib/image";
 
 const GIRLS_COLLEGE_FACILITIES = [
   {
@@ -26,7 +27,7 @@ const GIRLS_COLLEGE_FACILITIES = [
     title: "Advanced Bio-Chemical Labs",
     icon: FlaskConical,
     description: "Equipped with advanced spectrophotometers and chromatography columns for high school research capstones.",
-    image: "/images/science_lab.png",
+    image: getAssetPath("/images/science_lab.png"),
     color: null,
   },
   {
@@ -77,7 +78,7 @@ export default function ModernGirlsCollege() {
         <Hero
           title="Modern Girls College"
           motto="Empowering Young Women to Lead, Innovate, and Excel"
-          bgImage="/images/principal.png"
+          bgImage={getAssetPath("/images/principal.png")}
         />
 
         {/* About Section */}

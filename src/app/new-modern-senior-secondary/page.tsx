@@ -13,6 +13,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import AIAssistant from "@/components/AIAssistant";
 import { BookOpen, FlaskConical, Cpu, Bot, Trophy, Tv } from "lucide-react";
+import { getAssetPath } from "@/lib/image";
 
 const SENIOR_SCHOOL_FACILITIES = [
   {
@@ -26,21 +27,21 @@ const SENIOR_SCHOOL_FACILITIES = [
     title: "Advanced Chemistry & Physics Labs",
     icon: FlaskConical,
     description: "University-grade workspaces and chemical fume hoods, designed for advanced science research projects.",
-    image: "/images/science_lab.png",
+    image: getAssetPath("/images/science_lab.png"),
     color: null,
   },
   {
     title: "AI & Computational Data Hub",
     icon: Cpu,
     description: "High-end developer workstations, neural-net training servers, and edge computing boards.",
-    image: "/images/robotics_lab.png",
+    image: getAssetPath("/images/robotics_lab.png"),
     color: null,
   },
   {
     title: "Robotics Engineering Sandbox",
     icon: Bot,
     description: "A sandbox for modular assembly, mechanical modeling, and code testbeds for competition robots.",
-    image: "/images/robotics_lab.png",
+    image: getAssetPath("/images/robotics_lab.png"),
     color: null,
   },
   {
@@ -77,7 +78,7 @@ export default function NewModernSeniorSecondarySchool() {
         <Hero
           title="New Modern Senior Secondary School"
           motto="Striving for Academic Rigor, Technological Innovation, and Leadership"
-          bgImage="/images/robotics_lab.png"
+          bgImage={getAssetPath("/images/robotics_lab.png")}
         />
 
         {/* About Section */}

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
+import { getAssetPath } from "@/lib/image";
 
 export default function PrincipalMessage() {
   return (
@@ -21,7 +22,7 @@ export default function PrincipalMessage() {
             <div className="absolute inset-0 border-2 border-accent/20 rounded-3xl translate-x-4 translate-y-4 -z-10" />
             <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/5] w-full max-w-md h-[450px]">
               <Image
-                src="/images/principal.png"
+                src={getAssetPath("/images/principal.png")}
                 alt="Dr. Evelyn Vance, Principal of Aegis Academy"
                 fill
                 sizes="(max-w-7xl) 100vw, 400px"

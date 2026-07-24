@@ -19,6 +19,8 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, BookOpen, GraduationCap, School, CheckCircle2 } from 'lucide-react';
 
+import { getAssetPath } from '@/lib/image';
+
 const INSTITUTIONS = [
   {
     name: 'Modern English School',
@@ -28,7 +30,7 @@ const INSTITUTIONS = [
     link: '/modern-english-school',
     icon: BookOpen,
     image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=600&auto=format&fit=crop',
-    fallbackImage: '/images/science_lab.png',
+    fallbackImage: getAssetPath('/images/science_lab.png'),
   },
   {
     name: 'Modern Girls College',
@@ -37,8 +39,8 @@ const INSTITUTIONS = [
     features: ['Grades 9 - College (Ages 12 - 21)', 'Leadership Laboratories', 'AC Boarding Accommodations'],
     link: '/modern-girls-college',
     icon: GraduationCap,
-    image: '/images/school_front.png',
-    fallbackImage: '/images/principal.png',
+    image: getAssetPath('/images/school_front.png'),
+    fallbackImage: getAssetPath('/images/principal.png'),
   },
   {
     name: 'New Modern Senior Secondary School',
@@ -47,8 +49,8 @@ const INSTITUTIONS = [
     features: ['Grades 11 - 12 (Ages 14 - 18)', 'Advanced Placement (AP) Tracks', 'AI & Robotics Engineering'],
     link: '/new-modern-senior-secondary',
     icon: School,
-    image: '/images/school_assembly.png',
-    fallbackImage: '/images/robotics_lab.png',
+    image: getAssetPath('/images/school_assembly.png'),
+    fallbackImage: getAssetPath('/images/robotics_lab.png'),
   },
 ];
 
@@ -64,7 +66,7 @@ export default function Home() {
         <Hero
           title="Building Tomorrow's Leaders"
           motto="Empowering students through innovation, excellence, discipline and holistic education."
-          bgImage="/images/campus.png"
+          bgImage={getAssetPath('/images/campus.png')}
         />
 
         {/* Institutions Section */}

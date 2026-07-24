@@ -2,11 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, GraduationCap, ArrowRight } from 'lucide-react';
+import { getAssetPath } from '@/lib/image';
 
 interface NavbarProps {
   schoolName?: string;
+  isSubpage?: boolean;
   backLink?: string;
 }
 
@@ -16,10 +19,11 @@ const INSTITUTIONS = [
   { name: 'New Modern Senior Secondary School', href: '/new-modern-senior-secondary' },
 ];
 
-export default function Navbar({ schoolName, backLink }: NavbarProps) {
+export default function Navbar({ schoolName = 'Modern Education Group', isSubpage = false, backLink }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,21 +38,21 @@ export default function Navbar({ schoolName, backLink }: NavbarProps) {
   }, []);
 
   const navItems = [
-    { label: 'Home', href: backLink ? backLink : '#' },
     { label: 'About', href: '#about' },
-    { label: 'Institutions', href: '#campuses' },
-    { label: 'Admissions', href: '#admissions' },
+    { label: 'Campuses', href: '#campuses' },
     { label: 'Academics', href: '#academics' },
-    { label: 'Facilities', href: '#facilities' },
-    { label: 'Gallery', href: '#gallery' },
+    { label: 'Results', href: '#results' },
     { label: 'Social Feed', href: '#social-feed' },
+    { label: 'Gallery', href: '#gallery' },
+    { label: 'Admissions', href: '#admissions' },
     { label: 'Contact', href: '#contact' },
   ];
 
-  const logoSrc = 
+  const logoSrc = getAssetPath(
     schoolName === 'Modern Girls College' ? '/images/college_logo.png' :
     schoolName === 'Modern English School' ? '/images/english_school_logo.png' :
-    '/images/logo.png';
+    '/images/logo.png'
+  );
 
   return (
     <>

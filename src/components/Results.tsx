@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Trophy, Star, Award, GraduationCap, ArrowRight } from 'lucide-react';
 import TiltCard from './TiltCard';
+import { getAssetPath } from '@/lib/image';
 
 interface Topper {
   name: string;
@@ -238,7 +239,7 @@ export default function Results() {
                   {/* Large Student Portrait Banner Container */}
                   <div className="relative aspect-[4/5] sm:h-80 w-full overflow-hidden bg-slate-900">
                     <img
-                      src={topper.image}
+                      src={getAssetPath(topper.image)}
                       alt={topper.name}
                       className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                       onError={(e) => {

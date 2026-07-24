@@ -15,6 +15,7 @@ import {
   Sparkles,
   ArrowRight
 } from 'lucide-react';
+import { getAssetPath } from '@/lib/image';
 
 interface Hotspot {
   id: string;
@@ -43,7 +44,7 @@ export default function Campus3D() {
       subtitle: 'Modern Group of Education HQ',
       description: 'The executive headquarters hosting admissions guidance, administration, and digital communications channels.',
       icon: <Building className="h-5 w-5 text-accent" />,
-      image: '/images/school_front.png',
+      image: getAssetPath('/images/school_front.png'),
       link: '#contact',
       camPos: { x: -5, y: 4, z: 6 },
       lookAt: { x: -2.5, y: 0.5, z: -1 },
@@ -56,7 +57,7 @@ export default function Campus3D() {
       subtitle: 'Senior Prep & Assembly Yard',
       description: 'The collegiate secondary prep academy housing classrooms, sciences labs, and the primary assembly grounds.',
       icon: <School className="h-5 w-5 text-accent" />,
-      image: '/images/school_assembly.png',
+      image: getAssetPath('/images/school_assembly.png'),
       link: '/new-modern-senior-secondary',
       camPos: { x: 5, y: 4, z: 6 },
       lookAt: { x: 2.5, y: 0.8, z: -2 },
@@ -69,7 +70,7 @@ export default function Campus3D() {
       subtitle: 'Girls Higher Education & Residency',
       description: 'Secure, climate-controlled boarding wings and seminar rooms focused on women leadership and university preparation.',
       icon: <GraduationCap className="h-5 w-5 text-accent" />,
-      image: '/images/school_front.png', // Fallback to front building photo
+      image: getAssetPath('/images/school_front.png'), // Fallback to front building photo
       link: '/modern-girls-college',
       camPos: { x: -3, y: 4, z: 7 },
       lookAt: { x: -1, y: 1.2, z: 2 },
@@ -82,7 +83,7 @@ export default function Campus3D() {
       subtitle: 'Robotics & Coding Dome',
       description: 'A glowing geodesic prototyping lab loaded with automated micro-controllers, edge servers, and robotics assembly blocks.',
       icon: <Cpu className="h-5 w-5 text-accent" />,
-      image: '/images/robotics_lab.png',
+      image: getAssetPath('/images/robotics_lab.png'),
       link: '/modern-english-school',
       camPos: { x: 0, y: 5, z: 6 },
       lookAt: { x: 0, y: 0.5, z: 0 },
@@ -95,7 +96,7 @@ export default function Campus3D() {
       subtitle: 'Olympic Training Grounds',
       description: 'Professional sports fields, running tracks, swimming arenas, and volleyball facilities.',
       icon: <Activity className="h-5 w-5 text-accent" />,
-      image: '/images/campus.png',
+      image: getAssetPath('/images/campus.png'),
       link: '#facilities',
       camPos: { x: 4, y: 4, z: 7 },
       lookAt: { x: 2, y: 0.1, z: 2.5 },

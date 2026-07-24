@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, Maximize2, Image as ImageIcon, Play, Video } from 'lucide-react';
+import { getAssetPath } from '@/lib/image';
 
 const GALLERY_IMAGES = [
   {
@@ -159,7 +160,7 @@ export default function Gallery() {
             >
               {/* Image thumbnail (works for videos too using fallback) */}
               <img
-                src={item.type === 'video' ? item.fallback : item.src}
+                src={item.type === 'video' ? item.fallback : getAssetPath(item.src)}
                 alt={item.alt}
                 className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                 onError={(e) => {

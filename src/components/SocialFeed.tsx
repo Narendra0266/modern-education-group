@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, Heart, MessageCircle, ExternalLink, X, Eye, Sparkles, Video, Grid } from 'lucide-react';
 import TiltCard from './TiltCard';
+import { getAssetPath } from '@/lib/image';
 
 function InstagramIcon({ className = 'h-5 w-5' }: { className?: string }) {
   return (
@@ -295,11 +296,11 @@ export default function SocialFeed() {
                       ) : (
                         <>
                           <img
-                            src={item.image}
+                            src={getAssetPath(item.image)}
                             alt={item.title}
                             className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                             onError={(e) => {
-                              (e.target as HTMLImageElement).src = '/images/campus.png';
+                              (e.target as HTMLImageElement).src = getAssetPath('/images/campus.png');
                             }}
                           />
 

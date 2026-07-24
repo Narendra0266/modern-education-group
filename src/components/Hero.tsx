@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { ArrowRight, ChevronDown, Sparkles, BookOpen, GraduationCap, School, Settings, Compass } from 'lucide-react';
 import Link from 'next/link';
 import * as THREE from 'three';
+import { getAssetPath } from '@/lib/image';
 
 interface HeroProps {
   title?: string;
@@ -188,10 +189,11 @@ export default function Hero({
     };
   }, [actualIsSubpage]);
 
-  const logoSrc = 
+  const logoSrc = getAssetPath(
     title === 'Modern Girls College' ? '/images/college_logo.png' :
     title === 'Modern English School' ? '/images/english_school_logo.png' :
-    '/images/logo.png';
+    '/images/logo.png'
+  );
 
   if (actualIsSubpage) {
     // Elegant, premium layout for school subpages
@@ -202,11 +204,11 @@ export default function Hero({
           loop
           muted
           playsInline
-          poster={bgImage}
+          poster={getAssetPath(bgImage)}
           className="absolute top-0 left-0 w-full h-full object-cover scale-105 pointer-events-none filter brightness-50"
         >
           <source src={videoSrc} type="video/mp4" />
-          <img src={bgImage} alt="Campus" className="w-full h-full object-cover" />
+          <img src={getAssetPath(bgImage)} alt="Campus" className="w-full h-full object-cover" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-transparent to-primary" />
 
@@ -265,7 +267,7 @@ export default function Hero({
           animate={{ scale: 1.01, opacity: 1 }}
           transition={{ duration: 4.5, ease: 'easeOut' }}
           className="w-full h-full bg-cover bg-center filter brightness-[0.42] saturate-[0.85]"
-          style={{ backgroundImage: "url('/images/campus.png')" }}
+          style={{ backgroundImage: `url('${getAssetPath('/images/campus.png')}')` }}
         />
       </div>
 

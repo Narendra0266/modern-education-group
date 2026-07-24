@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Mail, GraduationCap } from "lucide-react";
+import { getAssetPath } from "@/lib/image";
 
 interface Leader {
   name: string;
@@ -19,7 +20,7 @@ const LEADERS: Leader[] = [
     role: "Chairman, Board of Directors",
     credentials: "Ph.D. in Education (Harvard University)",
     bio: "Dr. Pendelton has dedicated over 35 years to international academic reform and curriculum development, leading the vision of the Modern Education Group since 2005.",
-    image: "/images/principal.png", // Reusing principal or campus generated images since they are highly stylized
+    image: getAssetPath("/images/principal.png"), // Reusing principal or campus generated images since they are highly stylized
     email: "chairman@moderneducation.org",
     linkedin: "#",
   },
@@ -28,7 +29,7 @@ const LEADERS: Leader[] = [
     role: "Managing Director",
     credentials: "M.S. in Management (Stanford University)",
     bio: "Katherine orchestrates infrastructure development and international university exchange pathways, ensuring all three campuses maintain top-tier global integrations.",
-    image: "/images/principal.png",
+    image: getAssetPath("/images/principal.png"),
     email: "k.thorne@moderneducation.org",
     linkedin: "#",
   },
@@ -37,7 +38,7 @@ const LEADERS: Leader[] = [
     role: "Executive Principal",
     credentials: "Ed.D. in Educational Leadership (Oxford University)",
     bio: "Evelyn administers academic quality across our secondary schools, advising advanced AP integration and overseeing faculty peer-review processes.",
-    image: "/images/principal.png",
+    image: getAssetPath("/images/principal.png"),
     email: "e.vance@moderneducation.org",
     linkedin: "#",
   },
@@ -46,7 +47,7 @@ const LEADERS: Leader[] = [
     role: "Dean of Admissions & Counseling",
     credentials: "Ph.D. in Psychology (Yale University)",
     bio: "Marcus directs our career placement desks and Ivy League admission pathways, coordinating mental health programs and student counselling panels.",
-    image: "/images/principal.png",
+    image: getAssetPath("/images/principal.png"),
     email: "m.bell@moderneducation.org",
     linkedin: "#",
   },
