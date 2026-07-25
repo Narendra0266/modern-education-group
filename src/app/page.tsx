@@ -184,7 +184,10 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <About />
+        <About 
+          imageSrc={getAssetPath('/images/chairman.png')} 
+          chairmanName="Dr. Devilal Kumawat"
+        />
 
         {/* Why Choose Us (Bento Grid) */}
         <WhyChooseUs />
