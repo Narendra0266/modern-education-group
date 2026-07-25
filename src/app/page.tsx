@@ -198,8 +198,9 @@ export default function Home() {
         {/* Academic Board Toppers */}
         <Results />
 
-        {/* Campus Gallery */}
+        {/* Campus Gallery 
         <Gallery />
+        */}
 
         {/* Live Instagram & YouTube Feeds */}
         <SocialFeed />
