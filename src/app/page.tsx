@@ -29,6 +29,7 @@ const INSTITUTIONS = [
     features: ['Grades 1 - 8 (Ages 6 - 14)', 'STEM Coding Playgrounds', 'Active Sports & Swimming'],
     link: '/modern-english-school',
     icon: BookOpen,
+    logo: getAssetPath('/images/english_school_logo.png'),
     image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=600&auto=format&fit=crop',
     fallbackImage: getAssetPath('/images/science_lab.png'),
   },
@@ -39,6 +40,7 @@ const INSTITUTIONS = [
     features: ['Grades 9 - College (Ages 12 - 21)', 'Leadership Laboratories', 'AC Boarding Accommodations'],
     link: '/modern-girls-college',
     icon: GraduationCap,
+    logo: getAssetPath('/images/college_logo.png'),
     image: getAssetPath('/images/school_front.png'),
     fallbackImage: getAssetPath('/images/principal.png'),
   },
@@ -49,6 +51,7 @@ const INSTITUTIONS = [
     features: ['Grades 11 - 12 (Ages 14 - 18)', 'Advanced Placement (AP) Tracks', 'AI & Robotics Engineering'],
     link: '/new-modern-senior-secondary',
     icon: School,
+    logo: getAssetPath('/images/nmss_logo.png'),
     image: getAssetPath('/images/school_assembly.png'),
     fallbackImage: getAssetPath('/images/robotics_lab.png'),
   },
@@ -133,8 +136,12 @@ export default function Home() {
                         <div className="absolute -inset-px bg-gradient-to-br from-accent/0 via-accent/0 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[32px] pointer-events-none" />
 
                         <div className="flex items-center gap-3 mb-4">
-                          <div className="p-2.5 rounded-xl bg-primary/5 group-hover:bg-primary group-hover:text-white transition-colors duration-500">
-                            <Icon className="h-5 w-5 text-accent" />
+                          <div className="p-1.5 rounded-xl bg-white shadow-sm border border-slate-100 group-hover:shadow-md transition-all duration-500 h-12 w-12 flex items-center justify-center shrink-0">
+                            {inst.logo ? (
+                              <img src={inst.logo} alt={`${inst.name} logo`} className="w-full h-full object-contain" />
+                            ) : (
+                              <Icon className="h-6 w-6 text-accent" />
+                            )}
                           </div>
                           <span className="text-xs font-semibold text-slate-400 tracking-wider uppercase font-mono">
                             {inst.tagline}
