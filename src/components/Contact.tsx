@@ -50,19 +50,6 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    const message = `*New Admission Inquiry*
-*Name:* ${formData.name}
-*Email:* ${formData.email}
-*Phone:* ${formData.phone}
-*Grade/Stream:* ${formData.grade}
-*Message:* ${formData.message}`;
-
-    const whatsappNumber = '918890968045';
-    const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    
-    window.open(waUrl, '_blank');
-
     setTimeout(() => {
       setIsSubmitted(true);
       setFormData({ name: '', email: '', phone: '', grade: '', message: '' });
