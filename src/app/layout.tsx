@@ -20,10 +20,65 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Modern Education Group | Shaping Tomorrow's Leaders",
-  description: "Welcome to Modern Education Group. Shaping future leaders through three elite institutions: Modern English School, New Modern Senior Secondary School, and Modern Girls College.",
-  keywords: ["Modern Education Group", "Modern English School", "Modern Girls College", "New Modern Senior Secondary School", "elite education", "STEM academy", "women leadership"],
+  metadataBase: new URL('https://moderneducation.group'),
+  title: {
+    default: "Modern Education Group | Best School in Kuchaman City, Rajasthan",
+    template: "%s | Modern Education Group"
+  },
+  description: "Modern Education Group is the top-ranked educational institution in Kuchaman City, Rajasthan. We shape future leaders through Modern English School, New Modern Senior Secondary School, and Modern Girls College.",
+  keywords: [
+    "Best school in Kuchaman City",
+    "Top boarding school in Rajasthan",
+    "RBSE school in Kuchaman",
+    "Modern Education Group", 
+    "Modern English School", 
+    "Modern Girls College", 
+    "New Modern Senior Secondary School",
+    "Best science school in Rajasthan",
+    "Girls boarding school in Rajasthan",
+    "Top English medium school near me"
+  ],
   authors: [{ name: "Modern Education Group" }],
+  creator: "Modern Education Group",
+  publisher: "Modern Education Group",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    title: "Modern Education Group | Premier Education in Rajasthan",
+    description: "Discover the best educational experience in Kuchaman City. Admissions open for Modern English School, Girls College, and Senior Secondary.",
+    url: 'https://moderneducation.group',
+    siteName: 'Modern Education Group',
+    images: [
+      {
+        url: '/images/campus.png',
+        width: 1200,
+        height: 630,
+        alt: 'Modern Education Group Campus',
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Modern Education Group | Kuchaman City",
+    description: "Admissions Open! Shaping future leaders through our three elite campuses.",
+    images: ['/images/campus.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export const viewport: Viewport = {
