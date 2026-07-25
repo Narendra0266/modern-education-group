@@ -69,7 +69,7 @@ export default function Home() {
         <Hero
           title="Building Tomorrow's Leaders"
           motto="Empowering students through innovation, excellence, discipline and holistic education."
-          bgImage={getAssetPath('/images/campus.png')}
+          bgImage={getAssetPath('/images/campus.jpg')}
         />
 
         {/* Institutions Section */}
