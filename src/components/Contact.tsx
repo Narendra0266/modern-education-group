@@ -48,12 +48,45 @@ export default function Contact() {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setTimeout(() => {
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', phone: '', grade: '', message: '' });
-    }, 600);
+    setIsSubmitting(true);
+
+    try {
+      // Send email quietly in the background using Web3Forms
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // We will replace this
+          subject: "New Admission Inquiry from Website",
+          from_name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          grade: formData.grade,
+          message: formData.message,
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', phone: '', grade: '', message: '' });
+      } else {
+        console.error(result);
+        alert("Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong!");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (
@@ -230,10 +263,11 @@ export default function Contact() {
 
                     <button
                       type="submit"
-                      className="w-full py-4 rounded-full bg-accent hover:bg-primary text-primary hover:text-white font-semibold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-accent/20 cursor-pointer"
+                      disabled={isSubmitting}
+                      className="w-full py-4 rounded-full bg-accent hover:bg-primary text-primary hover:text-white font-semibold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-accent/20 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                     >
-                      Send Message
-                      <Send className="h-4 w-4" />
+                      {isSubmitting ? 'Sending...' : 'Send Message'}
+                      {!isSubmitting && <Send className="h-4 w-4" />}
                     </button>
                   </form>
                 )}
