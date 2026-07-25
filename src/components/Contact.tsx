@@ -55,31 +55,31 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Send email quietly in the background using Web3Forms
-      const response = await fetch("https://api.web3forms.com/submit", {
+      // Send email quietly in the background using FormSubmit.co
+      const response = await fetch("https://formsubmit.co/ajax/dadarwalnarendra0266@gmail.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // We will replace this
-          subject: "New Admission Inquiry from Website",
-          from_name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          grade: formData.grade,
-          message: formData.message,
+          _subject: "New Admission Inquiry from Website",
+          _captcha: "false",
+          "Student Name": formData.name,
+          "Email Address": formData.email,
+          "Contact Number": formData.phone,
+          "Grade Applied": formData.grade,
+          Message: formData.message,
         }),
       });
 
       const result = await response.json();
-      if (result.success) {
+      if (result.success === "true" || result.success === true) {
         setIsSubmitted(true);
         setFormData({ name: '', email: '', phone: '', grade: '', message: '' });
       } else {
         console.error(result);
-        alert("Failed to send message. Please try again later.");
+        alert("Failed to send message: " + (result.message || "Unknown error"));
       }
     } catch (error) {
       console.error(error);
