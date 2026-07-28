@@ -53,8 +53,8 @@ function Counter({ value, duration = 2.5 }: CounterProps) {
 export default function Hero({
   title = "Building Tomorrow's Leaders",
   motto = 'Empowering students through innovation, excellence, discipline and holistic education.',
-  bgImage = '/images/campus.png',
-  videoSrc = 'https://assets.mixkit.co/videos/preview/mixkit-drones-eye-view-of-a-university-campus-41002-large.mp4',
+  bgImage = '/images/campus.jpg',
+  videoSrc,
   isSubpage = false,
 }: HeroProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -260,7 +260,7 @@ export default function Hero({
   }
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden flex items-center justify-center bg-[#071a35] py-12 md:py-0">
+    <section className="relative min-h-screen w-full overflow-hidden flex items-center justify-center bg-primary py-12 md:py-0">
       {/* Cinematic school photo background with Ken Burns zoom effect */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -268,13 +268,13 @@ export default function Hero({
           animate={{ scale: 1.01, opacity: 1 }}
           transition={{ duration: 4.5, ease: 'easeOut' }}
           className="w-full h-full bg-cover bg-center filter brightness-[0.42] saturate-[0.85]"
-          style={{ backgroundImage: `url('${getAssetPath('/images/campus.png')}')` }}
+          style={{ backgroundImage: `url('${getAssetPath(bgImage)}')` }}
         />
       </div>
 
       {/* Luxury Navy/Vignette Overlays */}
-      <div className="absolute inset-0 bg-radial-[circle_at_center,_transparent_35%,_rgba(7,26,53,0.92)_100%] pointer-events-none z-10" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#071A35]/65 via-transparent to-[#071A35]/95 pointer-events-none z-10" />
+      <div className="absolute inset-0 bg-radial-[circle_at_center,_transparent_35%,_var(--color-primary)_100%] opacity-90 pointer-events-none z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/65 via-transparent to-primary/95 pointer-events-none z-10" />
 
       {/* Main Container */}
       <div className="relative z-20 w-full max-w-7xl px-6 md:px-8 h-full flex flex-col justify-between pt-24 sm:pt-[120px] pb-8">
@@ -283,7 +283,7 @@ export default function Hero({
           initial={{ x: -60, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 100, damping: 18, delay: 0.6 }}
-          className="absolute left-6 top-[28%] hidden xl:flex flex-col gap-1.5 p-2 rounded-[24px] bg-[#071a35]/60 border border-white/8 backdrop-blur-2xl shadow-2xl z-30 w-[200px] text-left"
+          className="absolute left-6 top-[28%] hidden xl:flex flex-col gap-1.5 p-2 rounded-[24px] bg-primary/60 border border-white/8 backdrop-blur-2xl shadow-2xl z-30 w-[200px] text-left"
         >
           <span className="text-[9px] font-bold text-accent tracking-widest uppercase px-3 py-1.5 font-mono block">Campuses</span>
           {[
@@ -320,7 +320,7 @@ export default function Hero({
           initial={{ x: 60, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 100, damping: 18, delay: 0.75 }}
-          className="absolute right-6 top-[28%] hidden xl:flex flex-col p-5 rounded-[24px] bg-[#071a35]/60 border border-white/8 backdrop-blur-2xl shadow-2xl z-30 w-[240px] text-left"
+          className="absolute right-6 top-[28%] hidden xl:flex flex-col p-5 rounded-[24px] bg-primary/60 border border-white/8 backdrop-blur-2xl shadow-2xl z-30 w-[240px] text-left"
         >
           <span className="text-[9px] font-bold text-accent tracking-widest uppercase font-mono block mb-2">The New Standard</span>
           <h4 className="font-serif text-lg font-bold text-white mb-2">Spatial Learning Model</h4>
