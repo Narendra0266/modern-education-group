@@ -30,7 +30,7 @@ const INSTITUTIONS = [
     link: '/modern-english-school',
     icon: BookOpen,
     logo: getAssetPath('/images/english_school_logo.png'),
-    image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=600&auto=format&fit=crop',
+    image: getAssetPath('/images/gallery_2.jpg'),
     fallbackImage: getAssetPath('/images/science_lab.png'),
   },
   {
