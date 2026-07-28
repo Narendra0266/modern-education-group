@@ -4,7 +4,7 @@
 
 @theme {
   --color-primary: #243B8F;
-  --color-accent: #D4AF37;
+  --color-accent: #FFF0C9;
   --color-background: #FFF0C9;
   
   --font-sans: var(--font-outfit), sans-serif;
@@ -34,7 +34,7 @@
   --muted: rgba(36, 59, 143, 0.05);
   --muted-foreground: #64748B;
   
-  --accent: #D4AF37;
+  --accent: #FFF0C9;
   --accent-foreground: #243B8F;
   
   --destructive: #EF4444;
@@ -42,7 +42,7 @@
   
   --border: rgba(36, 59, 143, 0.1);
   --input: rgba(36, 59, 143, 0.1);
-  --ring: #D4AF37;
+  --ring: #FFF0C9;
   
   --radius: 1rem;
 }
@@ -152,3 +152,4 @@ html.lenis {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+/* Force bust cache */
