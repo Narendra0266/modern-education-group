@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, GraduationCap, ArrowRight } from 'lucide-react';
 import { getAssetPath } from '@/lib/image';
+import LanguageSwitcher from './LanguageSwitcher';
 
 interface NavbarProps {
   schoolName?: string;
@@ -139,6 +140,7 @@ export default function Navbar({ schoolName = 'Modern Education Group', isSubpag
 
           {/* Right CTA Button */}
           <div className="hidden md:flex items-center gap-4">
+            <LanguageSwitcher />
             <a
               href="#admissions"
               className="px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest text-primary bg-accent hover:bg-white hover:text-primary transition-all duration-300 transform hover:-translate-y-[2px] active:translate-y-0 shadow-lg shadow-accent/20"
@@ -149,6 +151,7 @@ export default function Navbar({ schoolName = 'Modern Education Group', isSubpag
 
           {/* Mobile Menu Toggle */}
           <div className="lg:hidden flex items-center gap-4">
+            <LanguageSwitcher />
             <a
               href="#admissions"
               className="px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider text-primary bg-accent hover:bg-white transition-all duration-300"
